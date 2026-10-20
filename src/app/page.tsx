@@ -35,6 +35,37 @@ const priorityLabels: Record<TaskPriority, string> = {
 };
 
 export default function Home() {
+
+const [loggingOut, setLoggingOut] = useState(false);
+
+async function handleLogout() {
+  if (loggingOut) return;
+
+  setLoggingOut(true);
+  setError("");
+
+  try {
+    const response = await fetch("/api/auth/logout", {
+      method: "POST",
+    });
+
+    if (!response.ok) {
+      throw new Error("Não foi possível encerrar a sessão.");
+    }
+
+    setUser(null);
+    setTasks([]);
+    setPassword("");
+    setNewTaskTitle("");
+    setAuthMode("login");
+  } catch {
+    setError("Erro ao sair. Tente novamente.");
+  } finally {
+    setLoggingOut(false);
+  }
+}
+
+
   const [user, setUser] = useState<User | null>(null);
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState("");
@@ -392,6 +423,18 @@ export default function Home() {
               {saving ? "Salvando..." : "+ Nova tarefa"}
             </button>
           </form>
+
+          <button
+  type="button"
+  onClick={handleLogout}
+  disabled={loggingOut}
+  className="rounded-xl border border-slate-700 px-5 py-3
+    font-semibold text-slate-300 transition
+    hover:bg-slate-800 disabled:cursor-not-allowed
+    disabled:opacity-50"
+>
+  {loggingOut ? "Saindo..." : "Sair"}
+</button>
         </header>
 
         {error && (
