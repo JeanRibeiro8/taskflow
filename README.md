@@ -1,168 +1,172 @@
 # TaskFlow
 
-**Full-Stack Task Management Application**
+<div align="center">
 
-TaskFlow is a task management web application built with Next.js, React, TypeScript, and PostgreSQL. It combines user authentication, persistent task management, and a Kanban board to help users organize tasks and track their progress.
+### Full-Stack Task Management Application
 
-Developed as a portfolio project, TaskFlow demonstrates practical experience with full-stack web development, REST API design, database integration, authentication, data validation, and automated testing.
+A modern task management application built with **Next.js, React, TypeScript, and PostgreSQL**, featuring user authentication, persistent task management, and a Kanban board.
 
-![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
-![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?logo=typescript&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-4169E1?logo=postgresql&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma&logoColor=white)
-![Vitest](https://img.shields.io/badge/Vitest-Testing-6E9F18?logo=vitest&logoColor=white)
+TaskFlow demonstrates practical full-stack development skills through authentication, API design, database integration, data validation, and a structured task management workflow.
+
+<br />
+
+![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
+![Vitest](https://img.shields.io/badge/Vitest-Testing-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
+
+<br />
+
+**[GitHub Repository](https://github.com/JeanRibeiro8/taskflow)**
+
+</div>
 
 ---
 
-## Project Links
+## 📸 Preview
 
-- **GitHub Repository:** [JeanRibeiro8/taskflow](https://github.com/JeanRibeiro8/taskflow)
-- **Live Demo:** Not currently documented.
+<div align="center">
 
-## Overview
+### TaskFlow Dashboard
 
-TaskFlow provides a simple workspace for creating tasks, organizing them by status, and tracking progress through a Kanban board.
+![TaskFlow Preview](./public/taskflow.png)
 
-Users can register, sign in, create tasks, change their status, and remove tasks. Task data is stored in PostgreSQL, while server-side authentication and ownership checks help keep each user's tasks isolated.
+</div>
 
-The project focuses on a practical full-stack workflow without introducing unnecessary infrastructure or features beyond its core scope.
+> **Repository:** [github.com/JeanRibeiro8/taskflow](https://github.com/JeanRibeiro8/taskflow)
 
-### Project Goals
+---
 
-- Build a full-stack application with Next.js App Router.
-- Implement authentication using signed session tokens.
-- Develop task CRUD operations through Route Handlers.
-- Persist user and task data with PostgreSQL and Prisma ORM.
-- Validate incoming data with Zod.
-- Apply user-specific authorization to private task operations.
-- Practice automated testing with Vitest.
-- Maintain a clear and reproducible local development setup.
+## 📌 About the Project
 
-## Screenshots
-```markdown
-![TaskFlow Dashboard](./public/screenshots/dashboard.png)
-```
+**TaskFlow** is a full-stack task management application designed to help users organize their work through a Kanban board and a simple, focused dashboard.
 
-## Features
+Users can create an account, sign in, create tasks, track their progress across workflow columns, and delete tasks. Task data is persisted in PostgreSQL, while server-side authentication and ownership checks help ensure that users can access only their own tasks.
 
-### Authentication
+The project was built as part of my developer portfolio, with a focus on practical implementation rather than unnecessary complexity.
 
-- User registration with email and password.
-- Login with credential validation.
-- Signed session tokens using JOSE.
-- Session cookies configured as HTTP-only.
-- Session verification through a dedicated endpoint.
-- Logout by clearing the session cookie.
-- Password hashing with bcryptjs.
+> **Portfolio focus:** Next.js App Router, React, TypeScript, REST API development, PostgreSQL, Prisma ORM, authentication, data validation, and automated testing.
 
-### Task Management
+---
 
-- Create tasks using a title.
-- List tasks belonging to the authenticated user.
-- Update task status.
-- Delete tasks.
-- Store task creation and update timestamps.
-- Assign task priorities: Low, Medium, and High.
-- Validate task titles and status values.
+## ✨ Features
 
-**Current scope:** Task editing is limited to status changes. Editing titles, descriptions, and priorities is not documented as implemented functionality.
+### 🔐 Authentication
 
-### Kanban Board
+- User registration with email and password
+- Login with credential validation
+- JWT-based session management using JOSE
+- HTTP-only session cookies
+- Session verification through a dedicated endpoint
+- Logout and session cookie clearing
+- Password hashing with bcryptjs
 
-- Three workflow columns: To Do, In Progress, and Done.
-- Display tasks according to their current status.
-- Change a task's status through a selection control.
-- Display task counts for each column.
-- Show summary counters for total, in-progress, and completed tasks.
+### 📋 Task Management
 
-### Interface and Feedback
+- Create tasks with a title
+- List tasks belonging to the authenticated user
+- Update task status
+- Delete tasks
+- Display task creation and update timestamps
+- Support for Low, Medium, and High priorities
+- Validate task data before processing
 
-- Dashboard-oriented layout.
-- Responsive Tailwind CSS styling.
-- Login and registration forms.
-- Loading indicators during session verification and task creation.
-- User-facing error messages.
-- Task updates reflected in the interface after successful API responses.
+> **Current scope:** Task updates are limited to status changes. Full editing of titles, descriptions, and priorities is not currently documented as implemented.
 
-## Tech Stack
+### 🗂️ Kanban Board
 
-### Frontend
+- Three workflow columns: To Do, In Progress, and Done
+- Display tasks according to their current status
+- Change task status through an interface control
+- Task counts for individual workflow columns
+- Summary counters for total, in-progress, and completed tasks
+
+### 📊 Dashboard & User Interface
+
+- Dashboard-oriented layout
+- Task summary indicators
+- Responsive styling with Tailwind CSS
+- Login and registration forms
+- Loading indicators during supported operations
+- User-facing error messages
+- UI updates after successful task operations
+
+---
+
+## 🛠️ Tech Stack
 
 | Technology | Purpose |
 |---|---|
-| Next.js App Router | Application structure and server-side capabilities |
-| React 19 | Component-based user interface |
-| TypeScript | Static typing with strict compiler settings |
-| Tailwind CSS 4 | Utility-based styling and responsive layouts |
+| **Next.js 16** | Application framework and App Router |
+| **React 19** | Component-based user interface |
+| **TypeScript** | Static typing with strict compiler settings |
+| **Tailwind CSS 4** | Styling and responsive layouts |
+| **Next.js Route Handlers** | Authentication and task API endpoints |
+| **PostgreSQL** | Relational database and persistent storage |
+| **Prisma ORM 7** | Database schema and queries |
+| **JOSE** | JWT creation and verification |
+| **bcryptjs** | Password hashing |
+| **Zod** | Runtime data validation |
+| **Vitest** | Automated test execution |
+| **React Testing Library** | Component testing utilities |
+| **ESLint** | Static code analysis |
+| **Git & GitHub** | Version control and repository hosting |
 
-### Backend and API
+---
 
-| Technology | Purpose |
-|---|---|
-| Next.js Route Handlers | HTTP endpoints for authentication and task operations |
-| Node.js | Server-side JavaScript runtime |
+## ⚛️ Technical Concepts Practiced
 
-### Database and ORM
+TaskFlow brings together frontend and backend concepts in a single application.
 
-| Technology | Purpose |
-|---|---|
-| PostgreSQL | Persistent relational data storage |
-| Prisma ORM 7 | Database queries and schema modeling |
-| `@prisma/adapter-pg` | PostgreSQL adapter for Prisma |
-| `pg` | PostgreSQL driver |
+### Next.js & React
 
-### Authentication and Validation
+- App Router organization
+- React component-based interfaces
+- Client-side state and user interactions
+- Form handling
+- Conditional rendering
+- Loading, error, and empty states
 
-| Technology | Purpose |
-|---|---|
-| JOSE | JWT creation and verification |
-| bcryptjs | Password hashing and password verification |
-| Zod | Runtime validation of incoming data |
+### TypeScript
 
-### Testing and Development
+- Strict type checking
+- Typed request and response data
+- Consistent task and user models
+- Safer application logic
 
-| Technology | Purpose |
-|---|---|
-| Vitest | Automated test execution |
-| React Testing Library | Component testing utilities |
-| Testing Library Jest DOM | DOM assertion matchers |
-| ESLint | Static code analysis |
-| Git and GitHub | Version control and repository hosting |
+### Backend & API Development
 
-## Architecture
+- REST-style endpoints with Next.js Route Handlers
+- HTTP methods such as `GET`, `POST`, `PATCH`, and `DELETE`
+- Request validation
+- HTTP status codes
+- Server-side session verification
+- User-specific task authorization
 
-TaskFlow uses the Next.js App Router to organize its interface and server-side endpoints within a single application.
+### Database & Persistence
 
-The client interface sends HTTP requests to Route Handlers. Private task operations retrieve and verify the current session, validate incoming data with Zod where applicable, and use Prisma to query or modify PostgreSQL records.
+- PostgreSQL relational data modeling
+- Prisma schema and queries
+- User-to-task relationships
+- Database migrations
+- Persistent storage for application data
 
-### Application Flow
+### Authentication & Security
 
-```text
-React Interface
-      |
-      v
-Next.js Route Handlers
-      |
-      v
-Session Verification
-      |
-      v
-Zod Validation
-      |
-      v
-User Ownership Checks
-      |
-      v
-Prisma ORM
-      |
-      v
-PostgreSQL
-```
+- Password hashing
+- JWT signing and verification
+- HTTP-only cookies
+- Session expiration
+- Validation of private operations
+- Ownership checks for task access
 
-The validation and authorization steps depend on the endpoint; session verification and task ownership checks are applied to the private task operations.
+---
 
-### Project Structure
+## 🧩 Project Structure
+
+TaskFlow uses the Next.js App Router and separates application routes, reusable server-side utilities, validation schemas, and database configuration.
 
 ```text
 taskflow/
@@ -170,6 +174,7 @@ taskflow/
 │   ├── schema.prisma
 │   └── migrations/
 ├── public/
+│   └── taskflow.png
 ├── src/
 │   ├── app/
 │   │   ├── api/
@@ -191,7 +196,6 @@ taskflow/
 │           ├── auth.test.ts
 │           ├── task.ts
 │           └── task.test.ts
-├── .gitignore
 ├── eslint.config.mjs
 ├── next.config.ts
 ├── package.json
@@ -201,95 +205,116 @@ taskflow/
 └── vitest.setup.ts
 ```
 
-This is a simplified view of the relevant project files. The `prisma/migrations/` directory is configured in the Prisma configuration; verify that the initial migration files are present before relying on an existing migration history.
+*This is a simplified project tree. The screenshot path is included as the intended location; add the image only if it exists.*
 
-### Key Responsibilities
+### Key Directories & Files
 
-- **`src/app/page.tsx`** — Main interface, authentication forms, task creation, Kanban columns, and task interactions.
-- **`src/app/api/auth/`** — Registration, login, session lookup, and logout endpoints.
-- **`src/app/api/tasks/route.ts`** — Task listing, creation, status updates, and deletion.
-- **`src/lib/auth.ts`** — JWT signing and verification.
-- **`src/lib/session.ts`** — Reading and validating the session cookie.
+- **`src/app/`** — Main application interface and App Router routes.
+- **`src/app/api/auth/`** — Registration, login, current-session lookup, and logout endpoints.
+- **`src/app/api/tasks/`** — Task listing, creation, status updates, and deletion.
+- **`src/lib/auth.ts`** — JWT signing and verification utilities.
+- **`src/lib/session.ts`** — Session cookie handling and token verification.
 - **`src/lib/prisma.ts`** — Prisma Client and PostgreSQL adapter initialization.
-- **`src/lib/validations/`** — Authentication and task validation schemas and their tests.
-- **`prisma/schema.prisma`** — User and task models, status and priority enums, and their relationship.
-- **`prisma7.config.ts`** — Prisma schema, migrations, and database connection configuration.
-- **`vitest.config.ts`** — Test environment, module aliases, and test file discovery.
+- **`src/lib/validations/`** — Zod schemas and validation tests.
+- **`prisma/schema.prisma`** — User and task models, relationships, and enums.
+- **`prisma7.config.ts`** — Prisma configuration, including schema and migration paths.
+- **`vitest.config.ts`** — Automated testing configuration.
 
-## API Reference
+---
 
-The following endpoints are implemented in the repository.
+## 🔄 Application Architecture
 
-| Method | Endpoint | Purpose | Authentication |
+TaskFlow follows a server-backed application flow in which the interface communicates with Next.js Route Handlers, and the server uses Prisma to access PostgreSQL.
+
+```text
+          React Interface
+                 |
+                 v
+      Next.js Route Handlers
+                 |
+                 v
+       Session Verification
+                 |
+                 v
+         Input Validation
+              (Zod)
+                 |
+                 v
+       Task Ownership Checks
+                 |
+                 v
+            Prisma ORM
+                 |
+                 v
+            PostgreSQL
+```
+
+The exact steps vary by endpoint. Private task operations verify the current session and check task ownership before performing the requested operation.
+
+This structure keeps authentication, validation, data access, and presentation responsibilities organized without requiring a separate backend service.
+
+---
+
+## 🔌 API Reference
+
+The application exposes the following endpoints:
+
+| Method | Endpoint | Description | Authentication |
 |---|---|---|---|
-| `POST` | `/api/auth/register` | Register a user | Not required |
-| `POST` | `/api/auth/login` | Validate credentials and create a session | Not required |
-| `POST` | `/api/auth/logout` | Clear the session cookie | Not required by the handler |
-| `GET` | `/api/auth/me` | Retrieve the current user's public information | Required |
+| `POST` | `/api/auth/register` | Register a new user | Not required |
+| `POST` | `/api/auth/login` | Authenticate a user and create a session | Not required |
+| `POST` | `/api/auth/logout` | Clear the session cookie | Handler clears the cookie |
+| `GET` | `/api/auth/me` | Retrieve the current user's information | Required |
 | `GET` | `/api/tasks` | List the current user's tasks | Required |
 | `POST` | `/api/tasks` | Create a task | Required |
 | `PATCH` | `/api/tasks` | Update a task's status | Required |
 | `DELETE` | `/api/tasks?id={id}` | Delete a task owned by the current user | Required |
 
-### Request Details
+### Task Statuses
 
-**Register — `POST /api/auth/register`**
+The Kanban workflow uses three status values:
 
-Accepts an email and password. The email is normalized to lowercase, the password is hashed, and the endpoint returns `201 Created` when registration succeeds.
+- `TODO`
+- `IN_PROGRESS`
+- `DONE`
 
-**Login — `POST /api/auth/login`**
+Task priorities are represented by:
 
-Accepts an email and password. Successful authentication returns the user's public information and sets the `taskflow_session` cookie.
+- `LOW`
+- `MEDIUM`
+- `HIGH`
 
-**Create a task — `POST /api/tasks`**
+The current task API supports creation, listing, status updates, and deletion. It does not currently provide a documented full-task editing workflow.
 
-Example request body:
+---
 
-```json
-{
-  "title": "Review React fundamentals"
-}
-```
+## 🔐 Security
 
-The authenticated user's ID is used as the task owner. A successful creation returns `201 Created`.
+Security-related implementation includes:
 
-**Update status — `PATCH /api/tasks`**
+- **Password hashing:** Passwords are hashed with bcryptjs before storage.
+- **Signed session tokens:** JOSE is used to sign and verify JWTs.
+- **Session expiration:** Tokens have a defined expiration period.
+- **HTTP-only cookies:** Session tokens are stored in cookies inaccessible to client-side JavaScript.
+- **Cookie configuration:** The session cookie uses `SameSite=Lax` and the `Secure` flag in production.
+- **Input validation:** Zod schemas validate authentication and task input.
+- **Task ownership:** Private task operations check that tasks belong to the authenticated user.
+- **Environment variables:** Database credentials and the JWT secret are configured on the server.
 
-Example request body:
+These measures demonstrate important security practices, but they should not be interpreted as a complete security audit or a claim that the application is production-hardened.
 
-```json
-{
-  "id": 1,
-  "status": "IN_PROGRESS"
-}
-```
+---
 
-Supported statuses are `TODO`, `IN_PROGRESS`, and `DONE`.
-
-**Delete a task — `DELETE /api/tasks?id=1`**
-
-The task ID is provided as a query parameter. The handler checks task ownership before deletion.
-
-### Error Handling
-
-The implemented handlers return appropriate HTTP status codes for common outcomes, including:
-
-- `400 Bad Request` — Invalid input.
-- `401 Unauthorized` — Missing or invalid authentication.
-- `404 Not Found` — Task not found for the current user.
-- `409 Conflict` — Email already registered.
-- `500 Internal Server Error` — Unexpected server-side failure.
-
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
-Install the following before running the project:
+Make sure you have installed:
 
-- [Node.js](https://nodejs.org/) compatible with Next.js 16; Node.js 20.9 or later is required.
-- npm.
-- [Git](https://git-scm.com/).
-- [PostgreSQL](https://www.postgresql.org/).
+- [Node.js](https://nodejs.org/) — version 20.9 or later for Next.js 16
+- npm
+- [Git](https://git-scm.com/)
+- [PostgreSQL](https://www.postgresql.org/)
 
 ### 1. Clone the Repository
 
@@ -306,54 +331,52 @@ npm install
 
 ### 3. Configure Environment Variables
 
-The repository's `.env.example` file was not found during inspection. Create a local `.env` file in the project root with the required variables:
+Create a `.env` file in the project root.
 
 ```env
 DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/taskflow?schema=public"
-JWT_SECRET="REPLACE_WITH_A_SECURE_SECRET_OF_AT_LEAST_32_CHARACTERS"
+JWT_SECRET="YOUR_SECURE_SECRET"
 ```
 
-Replace the database connection values with your local PostgreSQL credentials.
+Replace the database credentials with your local PostgreSQL configuration.
 
-Generate a secure JWT secret using Node.js:
+Generate a secure secret using Node.js:
 
 ```bash
 node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
 ```
 
-This generates a 64-character hexadecimal secret. Copy the generated value into `.env` and keep that file out of version control.
+Use the generated value for `JWT_SECRET`. The application expects a secret of at least 32 characters.
 
-The application requires `JWT_SECRET` to contain at least 32 characters.
+**Important:** Never commit `.env` files containing real credentials or secrets.
 
-### 4. Create the PostgreSQL Database
+### 4. Create the Database
 
-Create a database named `taskflow` using your PostgreSQL installation, or use a database that you have permission to access.
+Create a local PostgreSQL database named `taskflow`, or configure `DATABASE_URL` to point to an existing database you can access.
 
-For example, with PostgreSQL command-line tools:
+For example:
 
 ```bash
 createdb taskflow
 ```
 
-Ensure that `DATABASE_URL` matches your local database, username, password, host, and port.
+### 5. Generate Prisma Client & Apply Migrations
 
-### 5. Apply Database Migrations
+The project uses the custom Prisma configuration file `prisma7.config.ts`.
 
-The project uses a custom Prisma configuration file named `prisma7.config.ts`.
-
-Generate the Prisma Client:
+Generate Prisma Client:
 
 ```bash
 npx prisma generate --config prisma7.config.ts
 ```
 
-Apply the database migrations:
+Apply migrations:
 
 ```bash
 npx prisma migrate dev --config prisma7.config.ts
 ```
 
-These commands assume the Prisma CLI and database are configured correctly. If no initial migration exists, create the initial migration using the configured Prisma setup before applying migrations in a fresh environment.
+These commands require a valid database connection and a correctly configured migration history. If the repository does not contain an initial migration, create and review one before applying migrations to a fresh database.
 
 ### 6. Start the Development Server
 
@@ -363,66 +386,22 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Environment Variables
+---
 
-| Variable | Required | Description |
-|---|---|---|
-| `DATABASE_URL` | Yes | PostgreSQL connection string |
-| `JWT_SECRET` | Yes | Secret used to sign and verify session tokens; at least 32 characters |
+## 🧪 Testing & Code Quality
 
-### Security Notes
+TaskFlow uses Vitest for automated tests focused on the authentication and task validation schemas.
 
-- Never commit `.env` or other files containing real secrets.
-- Keep `JWT_SECRET` on the server.
-- Do not expose password hashes or authentication tokens in API responses.
-- Use `.env.example` to document required variables without storing actual credentials.
+The existing validation tests cover cases such as:
 
-## Database Schema
+- Valid and invalid authentication data
+- Email normalization
+- Password validation
+- Empty or excessively long task titles
+- Valid task statuses
+- Invalid task IDs
 
-The Prisma schema defines two models and two enums.
-
-### User
-
-- `id` — Auto-incrementing identifier.
-- `email` — Unique email address.
-- `passwordHash` — Hashed password.
-- `createdAt` — Account creation timestamp.
-- `updatedAt` — Last update timestamp.
-- `tasks` — Related tasks.
-
-### Task
-
-- `id` — Auto-incrementing identifier.
-- `title` — Task title.
-- `status` — Current workflow status.
-- `priority` — Task priority.
-- `createdAt` — Creation timestamp.
-- `updatedAt` — Last update timestamp.
-- `userId` — Optional reference to the owning user in the current schema.
-- `user` — User relationship.
-
-### Enums
-
-**TaskStatus:** `TODO`, `IN_PROGRESS`, `DONE`
-
-**TaskPriority:** `LOW`, `MEDIUM`, `HIGH`
-
-The current schema supports task priorities and stores them in PostgreSQL. The implemented interface displays the priority, but the available task update endpoint only changes status.
-
-## Testing and Code Quality
-
-TaskFlow uses Vitest for automated tests, with tests focused on the Zod authentication and task validation schemas.
-
-The existing tests verify behavior such as:
-
-- Accepting valid registration and login data.
-- Rejecting invalid email addresses.
-- Enforcing registration password length requirements.
-- Trimming email and task-title whitespace.
-- Rejecting empty or excessively long task titles.
-- Accepting valid task statuses and rejecting invalid IDs or status values.
-
-The validation tests have been confirmed as passing during project development. They do not represent full end-to-end coverage of authentication, database operations, or the complete interface.
+These tests focus on schema behavior; they do not represent complete end-to-end coverage of authentication, database operations, or the entire user interface.
 
 ### Run Tests
 
@@ -430,7 +409,7 @@ The validation tests have been confirmed as passing during project development. 
 npm test
 ```
 
-Run the test suite in watch mode:
+### Run Tests in Watch Mode
 
 ```bash
 npm run test:watch
@@ -454,73 +433,119 @@ npx tsc --noEmit
 npm run build
 ```
 
-These commands are available for local verification. Do not interpret the existence of a script as proof that linting, type checking, or the production build has passed in every environment.
-
-## Security
-
-Security-related implementation details include:
-
-- **Password hashing:** bcryptjs hashes passwords before they are stored.
-- **Signed sessions:** JOSE creates and verifies JWT session tokens.
-- **Token expiration:** Session tokens expire after seven days.
-- **HTTP-only cookies:** The session cookie is not accessible to client-side JavaScript.
-- **Cookie configuration:** The session cookie uses `SameSite=Lax` and is marked `Secure` in production.
-- **Input validation:** Zod schemas validate authentication data, task titles, IDs, and status values.
-- **Ownership checks:** Task listing, status updates, and deletion are restricted to tasks belonging to the authenticated user.
-- **Server-side secrets:** The JWT signing secret and database connection string are read from environment variables.
-
-These controls are part of the current implementation, but they do not constitute a complete security audit. Production deployment should include further review of cookie behavior, CSRF considerations, rate limiting, error logging, and database configuration.
-
-## Learning Outcomes
-
-TaskFlow provides practical experience with:
-
-- Full-stack application development using Next.js App Router.
-- React and strict TypeScript.
-- REST-style API design and HTTP status codes.
-- User registration, login, and session management.
-- Password hashing and JWT verification.
-- PostgreSQL data modeling and Prisma ORM.
-- Server-side input validation with Zod.
-- User-specific authorization and data isolation.
-- State-driven interfaces and Kanban workflows.
-- Automated schema testing with Vitest.
-- Environment configuration and database migrations.
-- Code quality checks with ESLint and TypeScript.
-
-## Future Improvements
-
-Potential improvements for future versions include:
-
-- Add task title and description editing.
-- Allow users to change task priorities.
-- Add task search, filtering, and sorting.
-- Add deletion confirmation and more detailed success feedback.
-- Expand automated tests to cover API handlers and database authorization.
-- Add an `.env.example` file and complete local setup documentation.
-- Add real application screenshots.
-- Configure continuous integration with GitHub Actions.
-- Deploy the application and document its production configuration.
-
-These items are planned improvements, not claims about existing functionality.
-
-## License
-
-No license file was confirmed in the repository during this review. Until a license is added, the project should not be assumed to be available for unrestricted reuse, modification, or distribution.
-
-If you decide to publish the project under an open-source license, add the appropriate `LICENSE` file and update this section.
-
-## Author
-
-**Jean Ribeiro** — Frontend and Full-Stack Developer
-
-- **GitHub:** [JeanRibeiro8](https://github.com/JeanRibeiro8)
-- **LinkedIn:** [Jean Ribeiro](https://www.linkedin.com/in/jean-ribeiro-9a3792267/)
-- **Portfolio:** [jeanribeiro8.github.io/JeanRibeiro](https://jeanribeiro8.github.io/JeanRibeiro/)
-- **Email:** [jeanrsantos10@gmail.com](mailto:jeanrsantos10@gmail.com)
+Run these commands locally to verify the current environment. The presence of a command does not guarantee that every check passes on every machine.
 
 ---
 
-<p align="center">
-  Built to practice full-stack development, authentication, and persistent task management.
-</p>
+## 🧗 Development Challenges & Solutions
+
+### 🔐 Implementing Session-Based Authentication
+
+Private task operations require a reliable way to identify the current user.
+
+**Approach:**  
+TaskFlow uses signed JWT session tokens, HTTP-only cookies, and server-side token verification to establish the current session.
+
+### 🗄️ Connecting the API to Persistent Storage
+
+Task data must remain available beyond a single browser session.
+
+**Approach:**  
+PostgreSQL provides persistent storage, while Prisma ORM manages database access through the application's configured adapter.
+
+### 🛡️ Protecting User-Specific Tasks
+
+Users should not be able to access or modify tasks belonging to other accounts.
+
+**Approach:**  
+Private task operations verify the session and check task ownership before accessing or modifying a task.
+
+### ✅ Validating Incoming Data
+
+Invalid input can lead to inconsistent data or unexpected API behavior.
+
+**Approach:**  
+Zod schemas validate authentication and task input before the application processes supported operations.
+
+### 🗂️ Organizing the Kanban Workflow
+
+Tasks need to remain aligned with their current workflow status.
+
+**Approach:**  
+The application uses the `TODO`, `IN_PROGRESS`, and `DONE` status values to organize tasks into the corresponding Kanban columns.
+
+---
+
+## 🔮 Future Improvements
+
+The current version focuses on core task management, authentication, and persistence.
+
+Potential future improvements include:
+
+- Full editing of task titles and descriptions
+- Updating task priorities through the interface
+- Task search, filtering, and sorting
+- More detailed success and error feedback
+- Expanded API and database integration tests
+- Additional accessibility improvements
+- An `.env.example` file for easier setup
+- Real application screenshots
+- GitHub Actions for continuous integration
+- Deployment with documented production configuration
+
+These are possible future enhancements, not features currently claimed as implemented.
+
+---
+
+## 📚 What I Learned
+
+TaskFlow provided practical experience connecting frontend interactions to backend logic and persistent database operations.
+
+The project helped reinforce my understanding of:
+
+- **Full-stack development** with Next.js App Router
+- **React and TypeScript** for structured application interfaces
+- **REST API design** and HTTP methods
+- **Authentication** with JWT and HTTP-only cookies
+- **Password security** with bcryptjs
+- **Database integration** using PostgreSQL and Prisma ORM
+- **Data validation** with Zod
+- **Authorization** through user-specific ownership checks
+- **Kanban workflows** and state-driven UI updates
+- **Automated testing** with Vitest
+- **Development quality checks** with ESLint and TypeScript
+
+Most importantly, TaskFlow gave me practice treating a web application as a connected system in which the interface, API, authentication, validation, and database need to work together consistently.
+
+---
+
+## 👨‍💻 Author
+
+<div align="center">
+
+### Jean Ribeiro
+
+**Junior Web Developer | Frontend & Full-Stack Development**
+
+Brazil · Open to International Remote Opportunities
+
+This project is part of my developer portfolio, where I practice modern web technologies and build practical applications to strengthen my frontend and full-stack development skills.
+
+<br />
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=google-chrome&logoColor=white)](https://jeanribeiro8.github.io/JeanRibeiro/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JeanRibeiro8)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jean-ribeiro-9a3792267/)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jeanrsantos10@gmail.com)
+
+</div>
+
+---
+
+<div align="center">
+
+**TaskFlow** · Next.js + React + TypeScript + PostgreSQL
+
+Built as a full-stack development portfolio project by **Jean Ribeiro**
+
+</div>

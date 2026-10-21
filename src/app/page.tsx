@@ -23,15 +23,15 @@ type User = {
 type AuthMode = "login" | "register";
 
 const columns: { status: TaskStatus; label: string }[] = [
-  { status: "TODO", label: "A fazer" },
-  { status: "IN_PROGRESS", label: "Em andamento" },
-  { status: "DONE", label: "Concluída" },
+  { status: "TODO", label: "To do" },
+  { status: "IN_PROGRESS", label: "In progress" },
+  { status: "DONE", label: "Completed" },
 ];
 
 const priorityLabels: Record<TaskPriority, string> = {
-  LOW: "Baixa",
-  MEDIUM: "Média",
-  HIGH: "Alta",
+  LOW: "Low",
+  MEDIUM: "Medium",
+  HIGH: "High",
 };
 
 export default function Home() {
@@ -59,7 +59,7 @@ async function handleLogout() {
     setNewTaskTitle("");
     setAuthMode("login");
   } catch {
-    setError("Erro ao sair. Tente novamente.");
+    setError("Error while signing out. Please try again.");
   } finally {
     setLoggingOut(false);
   }
@@ -167,7 +167,7 @@ async function handleLogout() {
       const tasksResponse = await fetch("/api/tasks");
 
       if (!tasksResponse.ok) {
-        throw new Error("Login realizado, mas não foi possível carregar as tarefas.");
+        throw new Error("Login successful, but it was not possible to load the tasks.");
       }
 
       const data: Task[] = await tasksResponse.json();
@@ -205,7 +205,7 @@ async function handleLogout() {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error ?? "Não foi possível criar a tarefa.");
+        throw new Error(result.error ?? "It was not possible to create the task.");
       }
 
       setTasks((current) => [result as Task, ...current]);
@@ -214,7 +214,7 @@ async function handleLogout() {
       setError(
         taskError instanceof Error
           ? taskError.message
-          : "Erro ao criar tarefa.",
+          : "Error creating task.",
       );
     } finally {
       setSaving(false);
@@ -234,7 +234,7 @@ async function handleLogout() {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error ?? "Não foi possível atualizar a tarefa.");
+        throw new Error(result.error ?? "It was not possible to update the task.");
       }
 
       const updatedTask = result as Task;
@@ -246,7 +246,7 @@ async function handleLogout() {
       setError(
         taskError instanceof Error
           ? taskError.message
-          : "Erro ao alterar o status.",
+          : "Error changing the status.",
       );
     }
   }
@@ -262,7 +262,7 @@ async function handleLogout() {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error ?? "Não foi possível excluir a tarefa.");
+        throw new Error(result.error ?? "The task could not be deleted.");
       }
 
       setTasks((current) => current.filter((task) => task.id !== id));
@@ -270,7 +270,7 @@ async function handleLogout() {
       setError(
         taskError instanceof Error
           ? taskError.message
-          : "Erro ao excluir tarefa.",
+          : "Error deleting task.",
       );
     }
   }
@@ -297,8 +297,8 @@ async function handleLogout() {
 
           <p className="mt-2 text-sm text-slate-400">
             {authMode === "login"
-              ? "Entre para acessar suas tarefas."
-              : "Cadastre-se para começar a organizar seu trabalho."}
+              ? "Log in to access your tasks."
+              : "Sign up to start organizing your work."}
           </p>
 
           {error && (
@@ -392,13 +392,13 @@ async function handleLogout() {
           <div>
             <p className="mb-2 text-sm font-medium text-indigo-400">TASKFLOW</p>
             <h1 className="text-3xl font-bold tracking-tight">
-              Meu painel de tarefas
+              My task dashboard
             </h1>
             <p className="mt-2 text-sm text-slate-400">
-              Organize seu trabalho e acompanhe seu progresso.
+              Organize your work and track your progress.
             </p>
             <p className="mt-2 text-sm text-slate-500">
-              Conectado como {user.email}
+              Logged in as {user.email}
             </p>
           </div>
 
@@ -409,8 +409,8 @@ async function handleLogout() {
             <input
               value={newTaskTitle}
               onChange={(event) => setNewTaskTitle(event.target.value)}
-              placeholder="Nome da nova tarefa"
-              aria-label="Nome da nova tarefa"
+              placeholder="Name of the new task"
+              aria-label="Name of the new task"
               maxLength={100}
               required
               className="min-w-0 rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-indigo-400"
@@ -420,7 +420,7 @@ async function handleLogout() {
               disabled={saving}
               className="rounded-xl bg-indigo-500 px-5 py-3 font-semibold transition hover:bg-indigo-400 disabled:opacity-50"
             >
-              {saving ? "Salvando..." : "+ Nova tarefa"}
+              {saving ? "Saving..." : "+ New task"}
             </button>
           </form>
 
@@ -433,7 +433,7 @@ async function handleLogout() {
     hover:bg-slate-800 disabled:cursor-not-allowed
     disabled:opacity-50"
 >
-  {loggingOut ? "Saindo..." : "Sair"}
+  {loggingOut ? "Leaving..." : "Leave"}
 </button>
         </header>
 
@@ -448,13 +448,13 @@ async function handleLogout() {
 
         <section className="mb-8 grid gap-4 sm:grid-cols-3">
           {[
-            { label: "Total de tarefas", value: tasks.length },
+            { label: "Total tasks", value: tasks.length },
             {
-              label: "Em andamento",
+              label: "In progress",
               value: tasks.filter((task) => task.status === "IN_PROGRESS").length,
             },
             {
-              label: "Concluídas",
+              label: "Completed",
               value: tasks.filter((task) => task.status === "DONE").length,
             },
           ].map((item) => (
@@ -493,13 +493,13 @@ async function handleLogout() {
                       className="rounded-xl border border-slate-800 bg-slate-900 p-4"
                     >
                       <span className="mb-3 inline-block rounded-full bg-amber-500/15 px-2.5 py-1 text-xs font-medium text-amber-400">
-                        Prioridade {priorityLabels[task.priority].toLowerCase()}
+                        Priority {priorityLabels[task.priority].toLowerCase()}
                       </span>
 
                       <h3 className="font-medium">{task.title}</h3>
 
                       <p className="mt-3 text-xs text-slate-500">
-                        Tarefa #{task.id}
+                        Task #{task.id}
                       </p>
 
                       <div className="mt-4 flex flex-col gap-2">
@@ -507,7 +507,7 @@ async function handleLogout() {
                           htmlFor={`status-${task.id}`}
                           className="text-xs text-slate-400"
                         >
-                          Alterar status
+                          Changing status
                         </label>
 
                         <select
@@ -532,8 +532,7 @@ async function handleLogout() {
                           type="button"
                           onClick={() => deleteTask(task.id)}
                           className="rounded-lg border border-rose-500/30 px-3 py-2 text-sm font-medium text-rose-400 transition hover:bg-rose-500/10"
-                        >
-                          Excluir tarefa
+                        > Delete Task
                         </button>
                       </div>
                     </article>
@@ -541,7 +540,7 @@ async function handleLogout() {
 
                   {columnTasks.length === 0 && (
                     <p className="rounded-xl border border-dashed border-slate-800 p-5 text-center text-sm text-slate-500">
-                      Nenhuma tarefa nesta coluna.
+                      No tasks in this column.
                     </p>
                   )}
                 </div>
